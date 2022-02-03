@@ -72,4 +72,5 @@ group :test do
 end
 
 #
-gem
+gem 'sprockets-rails'
+gem 'bootstrap-sass'
