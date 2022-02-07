@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get 'user/new'
   root 'static_pages#home'
   get '/help',to: 'static_pages#help', as: 'help'
   get '/about',to: 'static_pages#about', as: 'about'
   get '/contacts',to: 'static_pages#contacts', as:'contacts'
+  get '/signup', to: 'user#new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
