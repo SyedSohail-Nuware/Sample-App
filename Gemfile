@@ -74,3 +74,6 @@ end
 #
 gem 'sprockets-rails'
 gem 'bootstrap-sass'
+
+# secure password
+gem 'bcrypt', '~> 3.1.7'
