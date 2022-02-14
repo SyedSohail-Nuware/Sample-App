@@ -80,3 +80,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 #testing
 gem 'rails-controller-testing'
+
+#Web Packer
+gem 'webpacker'
