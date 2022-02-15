@@ -10,7 +10,7 @@
 syed:
   name: syed
   email: syed@gmail.com
-  password_digest: 123456
+  password_digest: <%= User.digest('password') %>
 
 # michael:
 # name: Michael Example
