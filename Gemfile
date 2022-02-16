@@ -83,3 +83,8 @@ gem 'rails-controller-testing'
 
 #Web Packer
 gem 'webpacker'
+
+gem 'faker',                   '2.11.0'
+gem 'will_paginate',           '3.3.0'
+gem 'bootstrap-will_paginate', '1.0.0'
+

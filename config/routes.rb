@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
+  resources :users
   get 'sessions/new'
   get 'users/new'
   get '/help',to: 'static_pages#help', as: 'help'
@@ -9,7 +10,12 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login',to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  resources :users
+
+  delete '/user/:id/delete', to: 'users#destroy'
+  get '/user/:id/delete', to: 'users#destroy'
 
 end
  
+
+# delete 'articles/:id/delete' => 'articles#destroy', as: 'articles_delete'
+# get '/articles/:id/delete' => 'articles#destroy'

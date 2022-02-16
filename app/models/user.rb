@@ -12,7 +12,7 @@ class User < ApplicationRecord
 							# uniqueness:	case_sensitive: false
 							
 							has_secure_password
-	validates :password, presence: true, length: {minimum:6}
+	validates :password, presence: true, length: {minimum:6},allow_nil: true
 
 	def self.digest(string)
 		cost = ActiveModel::SecurePassword.min_cost ?
@@ -36,7 +36,7 @@ class User < ApplicationRecord
 	end
 
 	def authenticated?(remember_token)
-		return false if remember_digest.nil?
-		BCrypt::Password.new(remember_digest).is_password?(remember_token)
+		# return false if remember_digest.nil?
+		# BCrypt::Password.new(remember_digest).is_password?(remember_token)
 	end
 end
