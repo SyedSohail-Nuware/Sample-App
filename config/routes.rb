@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   post '/login',to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  delete '/user/:id/delete', to: 'users#destroy'
-  get '/user/:id/delete', to: 'users#destroy'
+  delete '/user/:id/delete', to: 'users#delete_user'
+  get '/user/:id/delete', to: 'users#delete_user'
 
 end
  

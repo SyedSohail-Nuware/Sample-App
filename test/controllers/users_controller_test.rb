@@ -60,4 +60,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
+  test "should destroy users by admin" do
+    get delete_user
+    assert_redirected_to users_path
+    
+  end
+
 end

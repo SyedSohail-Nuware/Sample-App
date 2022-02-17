@@ -3,7 +3,7 @@ require "test_helper"
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @msg = 'Ruby on Rails Tutorial Sample App'    
+    @msg = ' '    
   end
   
   test "should get home" do
