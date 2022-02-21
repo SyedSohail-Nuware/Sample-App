@@ -7,17 +7,28 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Create a main sample user.
-User.create!(name: Faker::Name.name,
+User.create!(name:  "Example User",
   email: "example@railstutorial.org",
-  password:"foobar",
-  password_confirmation: "foobar")
-  # Generate a bunch of additional users.
-  99.times do |n|
-    j=1
-    name = Faker::Name.name
-    email = "employee_#{n}@mail.com"
-    password = "123456"
-    ids = User.create([{name: name, email: email, 
-      password: password, 
-      password_confirmation: password},])  
-  end   
+  password:              "foobar",
+  password_confirmation: "foobar",
+  admin:     true,
+)
+
+# Generate a bunch of additional users.
+99.times do |n|
+name  = Faker::Name.name
+email = "example-#{n+1}@railstutorial.org"
+password = "password"
+User.create!(name:  name,
+   email: email,
+   password:              password,
+   password_confirmation: password,
+   )
+end
+
+# Generate microposts for a subset of users.
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| user.microposts.create!(content: content) }
+end

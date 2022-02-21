@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   delete '/user/:id/delete', to: 'users#delete_user'
   get '/user/:id/delete', to: 'users#delete_user'
 
+  resources :microposts,only: [:create, :destroy]
+
 end
  
 

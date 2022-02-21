@@ -4,19 +4,20 @@ class UsersController < ApplicationController
   before_action :admin_user,  only: :destroy
   def index
     @users = User.all
-    puts("/n/n/n INDEX CALLED_______-----------++++++++++===/n/n/n")
+    # puts("/n/n/n INDEX CALLED_______-----------++++++++++===/n/n/n")
     # User.find(params[:id]).destroy
     # flash.now[:success] = "User deleted "
   end
   
   def new
     @user = User.new
-    puts("/n/n/n NEW CALLED_______-----------++++++++++===/n/n/n")
+    # puts("/n/n/n NEW CALLED_______-----------++++++++++===/n/n/n")
   end
 
   def show
     @user = User.find(params[:id])
-    puts("/n/n/nSSSSHHHHOOOWWW CALLED_______-----------++++++++++===/n/n/n")
+    @microposts = @user.microposts.paginate(page: params[:page])
+    # puts("/n/n/nSSSSHHHHOOOWWW CALLED_______-----------++++++++++===/n/n/n")
 
     # debugger
   end
