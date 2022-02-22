@@ -87,4 +87,6 @@ gem 'webpacker'
 gem 'faker',                   '2.11.0'
 gem 'will_paginate',           '3.3.0'
 gem 'bootstrap-will_paginate', '1.0.0'
-
+gem 'active_storage_validations', '0.8.9'
+gem 'image_processing',           '1.9.3'
+gem 'mini_magick',                '4.9.5'
